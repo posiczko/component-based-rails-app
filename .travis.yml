@@ -1,0 +1,9 @@
+gemfile:
+   - Gemfile
+   - components/app_component/Gemfile
+ script:
+   - travis_retry ./test.sh
+ before_install:
+   - cd $(dirname $BUNDLE_GEMFILE)
+ rbenv:
+   - 2.5.3
