@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby '2.5.3'
 
@@ -45,4 +45,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'app_component', path: 'components/app_component', group: [:default, :direct] # group config is needed for dependency graphing
+path 'components' do
+  gem 'app_component', group: [:default, :direct] # group config is needed for dependency graphing
+end
+
+gem "trueskill", git: "https://github.com/benjaminleesmith/trueskill", ref: "e404f45af5b3fb86982881ce064a9c764cc6a901"

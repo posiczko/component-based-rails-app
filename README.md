@@ -77,3 +77,34 @@
 
 * Or you can add `./components/app_component/lib/app_component/engine.rb` 
   to make main app aware of migrations in engine.
+
+## 2.3 HANDLING DEPENDENCIES WITHIN COMPONENTS
+
+* With Sportsball now having the ability to store teams and games, we can turn to the question of how to predict 
+  the outcome of games based on past performance. To this end, we would like to add a page that will allow us to pick 
+  two teams. Click a button labeled something like “Predict the winner!”, and see the application’s prediction of who 
+  is more likely to win as a result.
+
+* Add path in `$APP_COMPONENT_DIR/config/routes` to let bundler figure out the dependencies.
+
+* Add `slim` templating to `app_component` in `./components/app_component/app_component.gemspec`
+  Unlike Rails applications, which automatically require all the gems they are directly dependent upon, 
+  Rails engines do not. Create `./components/app_component/lib/app_component.rb` which require `rails-slim`
+  and move require app/component/engine within module AppComponent.
+
+* Configure engine to use slim by default `./components/app_component/lib/app_component/engine.rb`
+
+* Lock down all runtime dependencies in components to exact versions in `./components/app_component/app_component.gemspec`.
+
+* Add Trueskill gem for comparing team to team. Add to sharef of outdated gem in `$APP_COMPONENT_DIR/Gemfile` and add
+  the gem itself to `$APP_COMPINENT/app_component.gemspec`. Intall
+  
+      cd $APP_COMPONENT
+      bundle
+
+* The Gemfile of any gem is ignored by other gems or apps depending on it (again, due to fact that the common \
+  expectation is for a gem to be published). We need to add sharef to `$CONTAINER_DIR/Gemfile`. Also need to require it
+  in `$APP_COMPONENT_DIR/lib/app_component.rb`
+
+* Add Predictions to the app in `$APP_COMPONENT_DIR/app/models/app_component_dir/predictor.rb`
+  Prediction is a data object that holds on to the teams participating in the prediction, as well as the winning team.
