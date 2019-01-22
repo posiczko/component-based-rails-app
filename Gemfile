@@ -45,6 +45,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem "rspec-rails"
+  gem "capybara"
+  gem "selenium-webdriver"
+end
 path 'components' do
   gem 'app_component', group: [:default, :direct] # group config is needed for dependency graphing
 end

@@ -28,7 +28,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 5.2.2"
 
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "rspec-rails"
+  spec.add_development_dependency "shoulda-matchers", "~> 4.0.0.rc1"
+  spec.add_development_dependency "database_cleaner"
+  spec.add_development_dependency "rails-controller-testing"
+  spec.add_development_dependency "capybara"
 
   spec.add_dependency "slim-rails", "3.2.0"
   spec.add_dependency "trueskill"
+
+  spec.test_files = Dir["spec/**/*"]
 end

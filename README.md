@@ -21,6 +21,9 @@
         --skip-action-mailer \
         --skip-active-storage \
         --skip-action-cable \
+        --dummy-path=spec/dummy \
+        --skip-mini-test \
+        --skip-test \
         --full --mountable
       cd components/app_component
       bundle
@@ -78,6 +81,7 @@
 * Or you can add `./components/app_component/lib/app_component/engine.rb` 
   to make main app aware of migrations in engine.
 
+
 ## 2.3 HANDLING DEPENDENCIES WITHIN COMPONENTS
 
 * With Sportsball now having the ability to store teams and games, we can turn to the question of how to predict 
@@ -108,3 +112,9 @@
 
 * Add Predictions to the app in `$APP_COMPONENT_DIR/app/models/app_component_dir/predictor.rb`
   Prediction is a data object that holds on to the teams participating in the prediction, as well as the winning team.
+
+## 3.1 TESTING A COMPONENT
+
+* Add `rspec-rails` to `app_component.gemspec`.
+
+
