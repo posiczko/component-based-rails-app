@@ -56,3 +56,4 @@ end
 
 gem "trueskill", git: "https://github.com/benjaminleesmith/trueskill", ref: "e404f45af5b3fb86982881ce064a9c764cc6a901"
 gem "jquery-rails"
+gem "rails_12factor"
