@@ -117,4 +117,18 @@
 
 * Add `rspec-rails` to `app_component.gemspec`.
 
+* Add spec/* tests
+
+## 3.3 ASSETS LOADING FOR COMPONENTS
+
+* Add foundation and friends to `$APP_COMPONENT_DIR/vendor/assets`.
+
+* Add jquery and jquery_ujs from "jquery_rails" gem in `$CONTAINER_DIR/Gemfile`, `$APP_COMPONENT_DIR/Gemfile`, and 
+  `$APP_COMPONENT_DIR/app_component.gemspec`.
+  
+* How to check production assets are correctly precompiled?
+  
+       RAILS_ENV=production rails s
+       
+* Add assets from the engine to be precompiled in `$APP_COMPONENT_DIR/config/initializers/assets.rb` if you rename them.
 

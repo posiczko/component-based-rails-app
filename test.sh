@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 exit_code=0
