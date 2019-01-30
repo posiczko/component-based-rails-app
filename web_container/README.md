@@ -132,3 +132,18 @@
        
 * Add assets from the engine to be precompiled in `$APP_COMPONENT_DIR/config/initializers/assets.rb` if you rename them.
 
+## 3.7 DIFFERENT COMPONENT STRUCTURE
+
+* Uncle Bob's talk about architectures screaming
+
+      mkdir web_container
+      mv * web_container
+      mv web_container/components .
+      
+* Rails now fails Fix broken stuff
+
+      CONTAINER_DIR=$CONTAINER_DIR/web_container      
+      cd $CONTAINER_DIR
+      rails s #broken
+      
+* 

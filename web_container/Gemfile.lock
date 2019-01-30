@@ -6,7 +6,7 @@ GIT
     trueskill (1.0.0)
 
 PATH
-  remote: components
+  remote: ../components
   specs:
     app_component (0.1.0)
       jquery-rails
