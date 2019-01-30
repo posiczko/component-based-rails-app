@@ -5,8 +5,8 @@ script:
   - travis_retry ./test.sh
 before_install:
   - cd $(dirname $BUNDLE_GEMFILE)
-  - echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-  - source $BASH_ENV
+  - echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' > ~/.bundler_version.sh
+  - source ~/.bundler_version.sh
   - gem install bundler
 rbenv:
   - 2.5.3
