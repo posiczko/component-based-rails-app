@@ -9,8 +9,8 @@ cp -R components deploy
 rm -rf deploy/tmp/*
 
 echo "       Fix components directory reference"
-gsed -i s|"\.\./components|"components|g deploy/Gemfile
-gsed -i s|remote: \.\./components|remote: \.\/components|g \
+gsed -i 's|\.\./components|components|g' deploy/Gemfile
+gsed -i 's|remote: \.\./components|remote: \.\/components|g' \
     deploy/Gemfile.lock
 
 echo "       Uploading application...."

@@ -1,7 +1,7 @@
 #!/bin/bash
 trap "exit" ERR
 
-APP_NAME="stormy-hollows-9630"
+APP_NAME="damp-oasis-92349"
 
 echo "-----> Deploying to Heroku"
 ./prepare_deploy_directory.sh
