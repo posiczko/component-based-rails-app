@@ -4,7 +4,7 @@ trap "exit" ERR
 APP_NAME="stormy-hollows-9630"
 
 echo "-----> Deploying to Heroku"
-prepare_deploy_directory.sh
+./prepare_deploy_directory.sh
 
 VERSION=`git rev-parse HEAD | perl -pe "chomp"`
 echo "-----> Deploying application version $VERSION"
